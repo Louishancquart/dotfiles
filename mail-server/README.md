@@ -105,6 +105,8 @@ We'll use **Sieve** to apply filters on our e-mails to organize our INBOX.
 sudo apt-get install postfix
 ```
 
+Choose "OK" > "Internet Site">  FQDN of your server (like "www.mydomain.com") .
+
 Copy the configuration files `config/etc/postfix/main.cf` and `config/etc/postfix/master.cf` in your `/etc/postfix` folder.  
 *Don't forget to backup your original files first*
 
