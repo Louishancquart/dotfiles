@@ -107,8 +107,9 @@ sudo apt-get install postfix
 
 Choose "OK" > "Internet Site">  FQDN of your server (like "www.mydomain.com") .
 
-Copy the configuration files `config/etc/postfix/main.cf` and `config/etc/postfix/master.cf` in your `/etc/postfix` folder.  
 *Don't forget to backup your original files first*
+Copy the configuration files `config/etc/postfix/main.cf` and `config/etc/postfix/master.cf` in your `/etc/postfix` folder.  
+
 
 Replace in the config files the `[[DOMAIN]]` keywords with your domain name.
 
@@ -118,8 +119,9 @@ Use the postalias command to create Postfix db for `/etc/aliases`
 postalias /etc/aliases
 ```
 
+*This file will clean headers in your e-mails :*
 Copy the file `config/etc/postfix/header_checks` in `/etc/postfix` and use the postmap command on it.  
-*This file will clean headers in your e-mails*
+
 
 ```bash
 postmap /etc/postfix/header_checks
@@ -166,9 +168,9 @@ systemctl enable dovecot.service
 ```bash
 sudo apt-get install spamassassin spamc
 ```
-
-Copy the `config/etc/spamassassin/local.conf` in your `/etc/spamassassin` folder.  
 *Don't forget to backup your original files first*
+Copy the `config/etc/spamassassin/local.cf` in your `/etc/spamassassin` folder.  
+
 
 Edit your `/etc/spamassassin/local.conf` and replace all the `[[DOMAIN]]` keywords with you domain name. You can also customize the subject rewriting if you want to.
 
